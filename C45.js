@@ -124,6 +124,21 @@
             root = childNode.child;
           }
           return root.value;
+        },
+        calcAccuracy: function(samples, cb) {
+          var total = samples.length;
+          var correct = 0;
+          for(var i=0;i<samples.length;i++) {
+            var pred = this.classify(samples[i]);
+            var actual = targets[i];
+            if(pred === actual){
+              correct++;
+            }
+          }
+          if(total>0)
+            cb(correct/total, correct, total);
+          else
+            cb(0.0);
         }
       };
 
