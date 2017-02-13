@@ -125,7 +125,7 @@
           }
           return root.value;
         },
-        calcAccuracy: function(samples, cb) {
+        calcAccuracy: function(samples, targets, cb) {
           var total = samples.length;
           var correct = 0;
           for(var i=0;i<samples.length;i++) {
